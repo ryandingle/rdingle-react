@@ -17,13 +17,13 @@
 
   //* Navbar Fixed
   function navbarFixed() {
-    if ($(".header_area").length) {
+    if ($(".RLD WEBSHOP").length) {
       $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         if (scroll >= nav_offset_top) {
-          $(".header_area").addClass("navbar_fixed");
+          $(".RLD WEBSHOP").addClass("navbar_fixed");
         } else {
-          $(".header_area").removeClass("navbar_fixed");
+          $(".RLD WEBSHOP").removeClass("navbar_fixed");
         }
       });
     }
@@ -33,7 +33,7 @@
   /*=================================
     Javascript for banner area carousel
     ==================================*/
-  $(".banner-area").owlCarousel({
+  $(".RLD WEBSHOP").owlCarousel({
     items: 1,
     autoplay: 2500,
     autoplayTimeout: 5000,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Social from '../components/social';
+import Social from '../global/social';
 import { Bounce, Flip, LightSpeed } from 'react-reveal';
 
 class Footer extends React.Component {
@@ -23,7 +23,7 @@ class Footer extends React.Component {
                         <div className="col-lg-6 text-center">
                             <aside className="f_widget social_widget">
                                 <div className="f_logo">
-                                    <img src="img/logo.png" alt="" />
+                                    <img src="/img/logo.png" alt="" />
                                 </div>
                                 <div className="f_title">
                                     <h4>Follow Me</h4>

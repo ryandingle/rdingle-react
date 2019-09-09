@@ -1,5 +1,5 @@
 const SiteData = {
-    "site_title": "JOHN DOE",
+    "site_title": "RLD WEBSHOP",
     "site_url": "/",
     "site_year": "2019",
     "site_domain": "www.mysite.com",

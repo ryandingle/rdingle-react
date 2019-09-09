@@ -20,7 +20,10 @@ class Header extends React.Component{
 
                         <Flip top>
                             <div className="container">
-                                <Link className="navbar-brand" to="/"><b><Bounce>{this.state.site.site_title}</Bounce></b></Link>
+                                <Link className="navbar-brand" to="/">
+                                    {/* <b><Bounce>{this.state.site.site_title}</Bounce></b> */}
+                                    <img src="/img/logo-top.png" />
+                                </Link>
                                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="icon-bar" />
                                     <span className="icon-bar" />
@@ -40,6 +43,7 @@ class Header extends React.Component{
                                 </div>
                             </div>
                         </Flip>
+
                     </nav>
                 </div>
             </header>
