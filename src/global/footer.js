@@ -32,7 +32,7 @@ class Footer extends React.Component {
                             </aside>
                             <div className="copyright">
                                 <p>
-                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i className="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">RLD WEBSHOP</a>
+                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i className="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://rdingle.com" target="_blank">RLD WEBSHOP</a>
                                 </p>
                             </div>
                         </div>

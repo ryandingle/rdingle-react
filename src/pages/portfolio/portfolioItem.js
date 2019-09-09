@@ -46,7 +46,7 @@ class PortfolioItem extends React.Component {
                                             <li><span>Rating</span>: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
                                                 class="fa fa-star"></i></li>
                                             <li><span>Client</span>: colorlib</li>
-                                            <li><span>Website</span>: colorlib.com</li>
+                                            <li><span>Website</span>: rdingle.com</li>
                                             <li><span>Completed</span>: 17 Aug 2018</li>
                                         </ul>
                                         <ul class="list social_details">
