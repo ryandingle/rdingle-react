@@ -18,16 +18,16 @@ class Routes extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={(props) => <Home {...props} site={SiteData} />} />
-        <Route exact path="/about" render={(props) => <About {...props} site={SiteData} />} />
-        <Route exact path="/contact" render={(props) => <Contact {...props} site={SiteData} />} />
-        <Route exact path="/portfolio" render={(props) => <Portfolio {...props} site={SiteData} />} />
-        <Route exact path="/portfolio/:id" render={(props) => <PortfolioItem {...props} site={SiteData} />} />
-        <Route exact path="/blog" render={(props) => <Blog {...props} site={SiteData} />} />
-        <Route exact path="/services" render={(props) => <Services {...props} site={SiteData} />} />
-        <Route exact path="/blog/:slug" render={(props) => <BlogItem {...props} site={SiteData} />} />
-        <Route exact path="/blog/catefory/:id" render={(props) => <BlogCategory {...props} site={SiteData} />} />
-        <Route exact path="/blog/tag/:id" render={(props) => <BlogTag {...props} site={SiteData} />} />
+        <Route exact={true}  path="/" render={(props) => <Home {...props} site={SiteData} />} />
+        <Route exact={true}  path="/about" render={(props) => <About {...props} site={SiteData} />} />
+        <Route exact={true}  path="/contact" render={(props) => <Contact {...props} site={SiteData} />} />
+        <Route exact={true}  path="/portfolio" render={(props) => <Portfolio {...props} site={SiteData} />} />
+        <Route exact={true}  path="/portfolio/:id" render={(props) => <PortfolioItem {...props} site={SiteData} />} />
+        <Route exact={true}  path="/blog" render={(props) => <Blog {...props} site={SiteData} />} />
+        <Route exact={true}  path="/services" render={(props) => <Services {...props} site={SiteData} />} />
+        <Route exact={true}  path="/blog/:slug" render={(props) => <BlogItem {...props} site={SiteData} />} />
+        <Route exact={true}  path="/blog/category/:id" render={(props) => <BlogCategory {...props} site={SiteData} />} />
+        <Route exact={true}  path="/blog/tag/:id" render={(props) => <BlogTag {...props} site={SiteData} />} />
         <Route
           render={function () {
             return <NotFound site={SiteData}  />;

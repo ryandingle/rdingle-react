@@ -5,17 +5,36 @@ import Routes from "./Routes";
 import Header from './global/header';
 import Footer from './global/footer';
 import SiteData from './utils/site-data';
+import Preloader from './global/preloader';
 
-const App = () => {
-  return (
-    <div>
-        <Router>
-          <Header site={SiteData} />
-          <Routes />
-          <Footer site={SiteData} />
-        </Router>
-    </div>
-  );
+class App extends React.Component{
+  constructor(props){
+    super(props);
+
+    this.state = {
+      isLoading: true
+    }
+  }
+
+  componentDidMount() {
+    this.setState({'isLoading': false});
+  }
+  
+  render() {
+    return (
+      <div>
+          { this.state.isLoading ?
+            <Preloader />
+          :
+            <Router>
+              <Header site={SiteData} />
+              <Routes />
+              <Footer site={SiteData} />
+            </Router>
+          }
+      </div>
+    );
+  }
 }
 
 export default App;

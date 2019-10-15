@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Fade, Zoom, LightSpeed, Flip, Bounce, Roll } from 'react-reveal';
 import RubberBand from 'react-reveal/RubberBand';
+import API from '../../global/api';
 
 class Home extends React.Component{
 
@@ -13,7 +14,8 @@ class Home extends React.Component{
     this.state = {
       site: [this.props.site][0],
       isHovering: false,
-      isItemHover: 0
+      isItemHover: 0,
+      isLoading: true,
     };
   }
 

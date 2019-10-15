@@ -1,85 +1,52 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Fade } from 'react-reveal';
-import Bounce from 'react-reveal/Bounce';
-import Zoom from 'react-reveal/Zoom';
+
+import Categroies from './component/categories';
+import Tags from './component/tags';
+import Recent from './component/recent';
 
 class Sidebar extends React.Component {
-    componentDidMount() {
-        window.scrollTo(0, 0);
+
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            search: ''
+        };
     }
 
+    updateInputValue = e => {
+        this.setState({ search: e.target.value });
+    }
+
+    updateURL = (e) => {
+        e.preventDefault();
+        const url = 'search='+this.state.search;
+        this.props.history.push(`/blog?${url}`);
+    };
+
     render() {
+        
         return (
 
             <div className="col-lg-4">
                 <div className="blog_right_sidebar">
                     <aside className="single_sidebar_widget search_widget">
                         <Fade right>
-                            <div className="input-group">
-                                <input type="text" className="form-control" placeholder="Search Posts" />
-                                <span className="input-group-btn">
-                                <button className="btn btn-default" type="button"><i className="lnr lnr-magnifier" /></button>
-                                </span>
-                            </div>
+                            <form onSubmit={this.updateURL}>
+                                <div className="input-group">
+                                    <input type="text" name="search" className="form-control" placeholder="Search Posts" onKeyUp={this.updateInputValue} />
+                                    <span className="input-group-btn">
+                                    <button className="btn btn-default" type="button"><i className="lnr lnr-magnifier" /></button>
+                                    </span>
+                                </div>
+                            </form>
                         </Fade>
                         <div className="br" />
                     </aside>
                     
-                    <aside className="single_sidebar_widget popular_post_widget">
-                        <Fade right>
-                            <h3 className="widget_title">Popular Posts</h3>
-                        </Fade>
-
-                        <Zoom>
-                            <div className="media post_item">
-                                <img src="/img/blog/popular-post/post1.jpg" alt="post" />
-                                <div className="media-body">
-                                <Link to="/blog/item">
-                                    <h3>Space The Final Frontier</h3>
-                                </Link>
-                                <p>02 Hours ago</p>
-                                </div>
-                            </div>
-                        </Zoom>
-
-                        <Zoom>
-                            <div className="media post_item">
-                                <img src="/img/blog/popular-post/post2.jpg" alt="post" />
-                                <div className="media-body">
-                                <Link to="/blog/item">
-                                    <h3>The Amazing Hubble</h3>
-                                </Link>
-                                <p>02 Hours ago</p>
-                                </div>
-                            </div>
-                        </Zoom>
-
-                        <Zoom>
-                            <div className="media post_item">
-                                <img src="/img/blog/popular-post/post3.jpg" alt="post" />
-                                <div className="media-body">
-                                <Link to="/blog/item">
-                                    <h3>Astronomy Or Astrology</h3>
-                                </Link>
-                                <p>03 Hours ago</p>
-                                </div>
-                            </div>
-                        </Zoom>
-
-                        <Zoom>
-                            <div className="media post_item">
-                                <img src="/img/blog/popular-post/post4.jpg" alt="post" />
-                                <div className="media-body">
-                                <Link to="/blog/item">
-                                    <h3>Asteroids telescope</h3>
-                                </Link>
-                                <p>01 Hours ago</p>
-                                </div>
-                            </div>
-                        </Zoom>
-                        <div className="br" />
-                    </aside>
+                    <Recent item={this.props.item} />
 
                     <Fade bottom>
                         <aside className="single_sidebar_widget ads_widget">
@@ -88,70 +55,7 @@ class Sidebar extends React.Component {
                         </aside>
                     </Fade>
 
-                    <Fade bottom>
-                        <aside className="single_sidebar_widget post_category_widget">
-                            <h4 className="widget_title">Post Categories</h4>
-                            <ul className="list cat-list">
-                                <li>
-                                    <Bounce>
-                                        <Link to="#" className="d-flex justify-content-between">
-                                            <p>Technology</p>
-                                            <p>37</p>
-                                        </Link>
-                                    </Bounce>
-                                </li>
-                                <li>
-                                    <Bounce>
-                                        <Link to="#" className="d-flex justify-content-between">
-                                            <p>Lifestyle</p>
-                                            <p>24</p>
-                                        </Link>
-                                    </Bounce>
-                                </li>
-                                <li>
-                                    <Bounce>
-                                        <Link to="#" className="d-flex justify-content-between">
-                                            <p>Fashion</p>
-                                            <p>59</p>
-                                        </Link>
-                                    </Bounce>
-                                </li>
-                                <li>
-                                    <Bounce>
-                                        <Link to="#" className="d-flex justify-content-between">
-                                            <p>Art</p>
-                                            <p>29</p>
-                                        </Link>
-                                    </Bounce>
-                                </li>
-                                <li>
-                                    <Bounce>
-                                        <Link to="#" className="d-flex justify-content-between">
-                                            <p>Food</p>
-                                            <p>15</p>
-                                        </Link>
-                                    </Bounce>
-                                </li>
-                                <li>
-                                    <Bounce>
-                                        <Link to="#" className="d-flex justify-content-between">
-                                            <p>Architecture</p>
-                                            <p>09</p>
-                                        </Link>
-                                    </Bounce>
-                                </li>
-                                <li>
-                                    <Bounce>
-                                        <Link to="#" className="d-flex justify-content-between">
-                                            <p>Adventure</p>
-                                            <p>44</p>
-                                        </Link>
-                                    </Bounce>
-                                </li>
-                            </ul>
-                            <div className="br" />
-                        </aside>
-                    </Fade>
+                    <Categroies />
                     
                     <Fade bottom>
                         <aside className="single-sidebar-widget newsletter_widget">
@@ -174,25 +78,7 @@ class Sidebar extends React.Component {
                         </aside>
                     </Fade>
                     
-                    <Fade bottom>
-                        <aside className="single-sidebar-widget tag_cloud_widget">
-                            <h4 className="widget_title">Tag Clouds</h4>
-                            <ul className="list">
-                                <li><Link to="#">Technology</Link></li>
-                                <li><Link to="#">Fashion</Link></li>
-                                <li><Link to="#">Architecture</Link></li>
-                                <li><Link to="#">Fashion</Link></li>
-                                <li><Link to="#">Food</Link></li>
-                                <li><Link to="#">Technology</Link></li>
-                                <li><Link to="#">Lifestyle</Link></li>
-                                <li><Link to="#">Art</Link></li>
-                                <li><Link to="#">Adventure</Link></li>
-                                <li><Link to="#">Food</Link></li>
-                                <li><Link to="#">Lifestyle</Link></li>
-                                <li><Link to="#">Adventure</Link></li>
-                            </ul>
-                        </aside>
-                    </Fade>
+                    <Tags isRefer={false} items={[]} />
                 </div>
             </div>
         );

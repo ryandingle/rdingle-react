@@ -854,26 +854,26 @@ button:focus {
     line-height: 29px;
     width: 100%;
     font-weight: 300;
-    color: #777777;
+    color: #fff;
     border: none;
     border-radius: 45px;
     z-index: 0;
     text-indent: 20px;
     background: #007bff; }
     .blog_right_sidebar .search_widget .input-group .form-control.placeholder {
-      color: #fff;
+      color: #ccc;
       text-transform: uppercase;
       font-size: 12px; }
     .blog_right_sidebar .search_widget .input-group .form-control:-moz-placeholder {
-      color: #fff;
+      color: #ccc;
       text-transform: uppercase;
       font-size: 12px; }
     .blog_right_sidebar .search_widget .input-group .form-control::-moz-placeholder {
-      color: #fff;
+      color: #ccc;
       text-transform: uppercase;
       font-size: 12px; }
     .blog_right_sidebar .search_widget .input-group .form-control::-webkit-input-placeholder {
-      color: #fff;
+      color: #ccc;
       text-transform: uppercase;
       font-size: 12px; }
     .blog_right_sidebar .search_widget .input-group .form-control:focus {
